@@ -2,8 +2,11 @@ let myDay = "";
 let today = "";
 let music = "";
 let myDate = new Date();
+let isPlaying = false;
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
+const volIn = document.getElementById("vol");
+const volInn = document.getElementById("vol1");
 
 
 
@@ -148,7 +151,7 @@ switch (myDay) {
             color: "pink",
             songname: " K A R L S O N V I B ",
             artist: " Evan King  ",
-            link: "https://www.youtube.com/watch?v=FtE6SV_1wu4",
+            link: "//www.youtube.com/watch?v=FtE6SV_1wu4",
             linkColor: "gold",
             pic: "images/KARLSONVIBE.png",
             alt: "A pic of cover",
@@ -162,6 +165,7 @@ switch (myDay) {
 
 
 }
+
 function musicTemplate(music) {
     let myReturn = "";
 
@@ -176,23 +180,11 @@ function musicTemplate(music) {
 
     return myReturn;
 }
-let audio = document.querySelector('audio');
-audio.src = music.audio;
-audio.volume = .25;
-audio.loop = true;
-audio.controls = true;
-audio.style.background = music.color;
-
-setTimeout(() => {
-    audio.play();
-}, 4000);
 
 
 
 
 
-
-console.log(queryString);
 
 document.getElementById("music-output").innerHTML = musicTemplate(music);
 
@@ -207,5 +199,23 @@ document.getElementById("link").style.color = music.linkColor;
 document.getElementById("cardback").style.backgroundColor = music.bgc;
 
 document.getElementById("feature").style.color = music.linkColor;
+
+
+const input = document.querySelector('input[type="range"]');
+const style = document.createElement('style');
+const head = document.head || document.getElementsByTagName('head')[0];
+style.type = 'text/css';
+head.appendChild(style);
+input.oninput = function (e) {
+    const cssText = `input#vol::-webkit-slider-thumb, input#vol::-moz-range-thumb {
+    background-color: ${music.color};
+  }`;
+    if (style.styleSheet) {
+        style.styleSheet.cssText = cssText;
+    } else {
+        style.innerHTML = "";
+        style.appendChild(document.createTextNode(cssText));
+    }
+}
 
 

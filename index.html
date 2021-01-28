@@ -5,7 +5,7 @@
     <title>Daily music!</title>
 
     <link rel="stylesheet" href="css/default.css">
-    <script src="JS/daily-grind.js" defer></script>
+
     <style type="text/css">
         html {
             display: flex;
@@ -58,10 +58,18 @@
     <h1>Daily music!</h1>
 
 
+
     <div id="music-output">music will go here!</div>
-    <audio id="motd"></audio>
+    <div id="controls">
+        <button onclick=playPause();>play</button>
 
 
+
+
+        <input type="range" name="time" id="time" onchange=update();>
+        <input type="range" onchange=updateVol(); onmousemove=updateVol(); id="vol" max="100" min="0"></input>
+        <audio id="motd"></audio><label for="vol1">Volume</label>
+        <input type="text" oninput=updateVol1(); id="vol1"></input></div>
     <div id="info">
         <h3>Music Specials for Every Day of the Week</h3>
         <p><a href="?day=0">Sunday</a></p>
@@ -72,6 +80,10 @@
         <p><a href="?day=5">Friday</a></p>
         <p><a href="?day=6">Saturday</a></p>
     </div>
+
+
+    <script src="JS/daily-grind.js" defer></script>
+    <script src="JS/audio.js" defer></script>
 
 
 
