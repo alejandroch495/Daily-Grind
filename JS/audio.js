@@ -16,10 +16,10 @@ function update() {
         time.value = audio.currentTime;
         time.max = audio.duration;
 
-        console.log(time.value);
+
 
         document.getElementById("time").style.background = "rgba(0, 0, 0, 0) linear-gradient(to right, rgb(153, 72, 72) " + (position) + "%, white " + (position += .5) + "%) repeat scroll 0% 0%";
-        console.log(time.style.background);
+
     }, updateInterval);
     setTimeout(() => {
         update();
