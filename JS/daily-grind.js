@@ -1,6 +1,6 @@
 let myDay = "";
 let today = "";
-let coffee = "";
+let music = "";
 let myDate = new Date();
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -16,15 +16,15 @@ if(urlParams.has('day')){
 }
  
  
-function coffeeTemplate(coffee){
+function musicTemplate(music){
     let myReturn = "";
  
     myReturn = `
-    <p>
-    <img src="${coffee.pic}" alt="Our ${coffee.alt}" id="coffee">
-    <strong id="coffee-higlight" class="feature">${coffee.day}'s Coffee Special:</strong> ${coffee.day}'s daily special is <strong>${coffee.name}</strong>, ${coffee.desc}
- 
-    </p>
+    
+    <img src="${music.pic}" alt="Our ${music.alt}" id="music">
+    <p id="music-higlight">
+    <strong class="feature" id="feature">${music.day}'s music Special:</strong><strong>${music.songname}</strong> by, <strong>${music.artist}, </strong><strong>link: </strong><a id="link"href="${music.link}">Youtube</a><strong> brought to you by: </strong>${music.desc}
+    </>
         `;
         
     return myReturn;
@@ -35,13 +35,17 @@ switch(myDay){
     case 1:
         today = "Monday";
  
-        coffee = {
+        music = {
+            bgc: "black",
             color: "pink",
-            name: "Bubble Tea",
-            pic: "images/bubble-tea.jpg",
-            alt: "A pic of Bubble Tea",
+            songname: " Tropical Evening ",
+            artist: " Vlad Gluschenko ",
+            link: "https://www.youtube.com/watch?v=T5usbtpaVd8",
+            linkColor:"gold",
+            pic: "images/Tropical-Evening.png",
+            alt: "A pic of cover",
             day: "Monday",
-            desc: 'I love Bubble Tea'
+            desc: 'Vlog music No copyright'
         };
  
     break;    
@@ -49,13 +53,17 @@ switch(myDay){
     case 2:
         today = "Tuesday";
  
-        coffee = {
-            color: "orange",
-            name: "Flat White",
-            pic: "images/Flat-White.jpg",
-            alt: "A pic of Flat White",
+        music = {
+            bgc: "black",
+            color: "lightblue",
+            songname: " City ",
+            artist: " MorningLightMusic ",
+            link: "https://www.youtube.com/watch?v=kvsFXQFCYbY",
+            linkColor:"gold",
+            pic: "images/City.png",
+            alt: "A pic of cover",
             day: "Tuesday",
-            desc: 'If its not flat white, then its not right'
+            desc: 'MorningLightMusic'
         };
  
     break;   
@@ -64,13 +72,17 @@ switch(myDay){
     case 3:
         today = "Wednesday";
  
-        coffee = {
-            color: "brown",
-            name: "drip",
-            pic: "images/drip.jpg",
-            alt: "A pic of drip coffee",
+        music = {
+            bgc: "black",
+            color: "pink",
+            songname: " Golden Wind OST ",
+            artist: " Yugo Kanno ",
+            link: "https://www.youtube.com/watch?v=MOHPyHEW1Us&t=829s",
+            linkColor:"gold",
+            pic: "images/GoldenWindpng.png",
+            alt: "A pic of cover",
             day: "Wednesday",
-            desc: 'Some days you just need the drip!'
+            desc: 'David Production'
         };
  
     break;
@@ -78,13 +90,17 @@ switch(myDay){
     case 4:
         today = "Thursday";
  
-        coffee = {
-            color: "LightBrown",
-            name: "frappaccino",
-            pic: "images/frappaccino.jpg",
-            alt: "A pic of frappaccino",
+        music = {
+            bgc: "black",
+            color: "pink",
+            songname: " Spectre ",
+            artist: " Alan Walker ",
+            link: "https://www.youtube.com/watch?v=AOeY-nDp7hI",
+            linkColor:"gold",
+            pic: "images/Spectre.png",
+            alt: "A pic of cover",
             day: "Thursday",
-            desc: 'I love me some frappaccino'
+            desc: 'Vlog music No copyright'
  
         };
  
@@ -94,13 +110,17 @@ switch(myDay){
     case 5:
         today = "Friday";
     
-        coffee = {
-            color: "white",
-            name: "Cappuccino",
-            pic: "images/Cappuccino.jpg",
-            alt: "A pic of Cappuccino",
+        music = {
+            bgc: "black",
+            color: "deepPink",
+            songname: " Astronomia 2K19 - Coffin Dance ",
+            artist: " Stephan F ",
+            link: "https://www.youtube.com/watch?v=Rk01_D006_Q",
+            linkColor:"gold",
+            pic: "images/Astronomia-2K19-Coffin-Dance.png",
+            alt: "A pic of cover",
             day: "Friday",
-            desc: `With this cappuccino, i can take on a rhino`
+            desc: '8D WAYS'
            
          };
  
@@ -110,13 +130,17 @@ switch(myDay){
     case 6:
         today = "Saturday";
  
-        coffee = {
-            color: "darkGray",
-            name: "pumpkin spice latte",
-            pic: "images/pumpkin-spice-latte.jpg",
-            alt: "A pic of pumpkin spice latte",
+        music = {
+            bgc: "black",
+            color: "lightgreen",
+            songname: " The Beginning of Time ",
+            artist: " DJ Nate ",
+            link: "https://www.youtube.com/watch?v=zSts-P2HN04",
+            linkColor:"gold",
+            pic: "images/The-Beginning-of-Timepng.png",
+            alt: "A pic of cover",
             day: "Saturday",
-            desc: `Which pumpkin for my pumpkin spice latte?`
+            desc: 'Newgrounds'
  
         
         };
@@ -127,13 +151,17 @@ switch(myDay){
     case 0:
         today = "Sunday";
  
-        coffee = {
-            color: "gray",
-            name: "Milk Tea",
-            pic: "images/MilkTea.bmp",
-            alt: "A pic of Milk Tea",
+        music = {
+            bgc: "black",
+            color: "pink",
+            songname: " K A R L S O N V I B ",
+            artist: " Evan King  ",
+            link: "https://www.youtube.com/watch?v=FtE6SV_1wu4",
+            linkColor:"gold",
+            pic: "images/KARLSONVIBE.png",
+            alt: "A pic of cover",
             day: "Sunday",
-            desc: `Ahhhh some Milk Tea with some green tea chocolate would be nice...`
+            desc: 'Dani2'
         };
  
     break;    
@@ -145,8 +173,13 @@ switch(myDay){
  
 console.log(queryString);
  
-document.getElementById("coffee-output").innerHTML = coffeeTemplate(coffee);
+document.getElementById("music-output").innerHTML = musicTemplate(music);
  
-document.getElementsByTagName("HTML")[0].style.backgroundColor = coffee.color;
+document.getElementsByTagName("HTML")[0].style.backgroundColor = music.color;
  
-document.getElementById("coffee-highlight").style.color = coffee.color;
+document.getElementById("music-higlight").style.color = music.color;
+document.getElementById("music-higlight").style.boxShadow = music.color;
+document.getElementById("link").style.color = music.linkColor;
+
+document.getElementById("cardback").style.backgroundColor = music.bgc;
+document.getElementById("feature").style.color = music.linkColor;
