@@ -143,7 +143,7 @@ switch(myDay){
 }
  
  
-console.log(coffee);
+console.log(queryString);
  
 document.getElementById("coffee-output").innerHTML = coffeeTemplate(coffee);
  
