@@ -43,3 +43,7 @@ a {
     text-align: center;
     justify-content: center;
 }
+#motd{
+    margin-top:3%;
+    border-radius: 5px;
+}
